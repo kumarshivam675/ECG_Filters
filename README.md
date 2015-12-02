@@ -7,7 +7,7 @@
 -$ chmod +x run.sh 
 ```
 
--To Run:
+- To Run:
 ```
 -$ ./build.sh
 -$ ./run.sh <inputECGFileName> <outputFileName>
