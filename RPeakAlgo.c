@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "math.h"
 
-long double input(long double* input_array, char* input, char* output) {
+long double input(long double* input_array, char* input) {
 	FILE *fp;
 	fp=fopen(input,"r");
 	fscanf(fp,"%Lg",&input_array[0] );
@@ -56,7 +56,6 @@ int peakDetect(long double* input_array, int* samples, float* time_samples, int 
 
 int main(int argc,char* argv[]) {
 	FILE *fp;
-	fp=fopen(argv[2],"w");
 	if(argc != 3){
 		printf("Please enter the input and output file respectively \n");
 		return 0;
@@ -65,9 +64,10 @@ int main(int argc,char* argv[]) {
 	int size, freq=250, sample_size, window_size = 175, i, j;
 	int samples[200];
 	float time_samples[200];
-	size = input(input_array, argv[1],argv[2]);
+	size = input(input_array, argv[1]);
 	differentiate(input_array,size,freq);
 	sample_size = peakDetect(input_array,samples,time_samples,size,window_size,freq);
+	fp=fopen(argv[2],"w");
 	for(j=0;j<sample_size;j++) {
 		fprintf(fp,"%d, %f\n",samples[j],time_samples[j]);
 	}
