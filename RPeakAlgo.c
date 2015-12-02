@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "math.h"
 
-long double input(long double* input_array, char* input) {
+int input(long double* input_array, char* input) {
 	FILE *fp;
 	fp=fopen(input,"r");
 	fscanf(fp,"%Lg",&input_array[0] );
