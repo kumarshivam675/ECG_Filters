@@ -3,10 +3,10 @@
 int input(long double* input_array, char* input) {
 	FILE *fp;
 	fp=fopen(input,"r");
-	fscanf(fp,"%Lg",&input_array[0] );
+	fscanf(fp,"%Lg",&input_array[0]);
 	int i=1;
-	while( !feof(fp) ) {
-		fscanf(fp,"%Lg",&input_array[i] );
+	while(!feof(fp)) {
+		fscanf(fp,"%Lg",&input_array[i]);
 		i++;
 	}
 	fclose(fp);
