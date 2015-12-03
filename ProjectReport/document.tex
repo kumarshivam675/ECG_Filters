@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\title{DSP Project Report: ECG Signal Analysis}
+\author{Apoorv Vikram Singh (IMT2013006) \\ Ujjwal Jain (IMT2013056) \\ Abhinav Chawla (IMT2013002) \\ Siddartha Sekhar Padhi (IMT2013043) \\ Rishabh Bhadauria (IMT2013034) \\ Shivam Kumar (IMT2013042) }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Electrocardiogram (ECG) is a nearly periodic signal that reflects the activity of the
+heart. A lot of information on the normal and pathological physiology of heart can be
+obtained from ECG. However, the ECG signals being non-stationary in nature, it is very
+difficult to visually analyze them. Thus the need is there for computer based methods for
+ECG signal Analysis. \\ \\
+We were given the ECG data collected using the Wipro AssureHealth device doing
+various physical activities. The sampling frequency was 250Hz. The data given to
+us didn't look like an ideal ECG which we generally see in the hospitals. The
+sources for additional noise could be powerline interference, electrode contact
+noise , the baseline drift and motion artifacts. There could be EMG from the
+chest wall. There also could be instrumentation noise. \\ \\
+The purpose of this report is to analyse the data and make a C code such that
+the output could be given in real-time. 
+
+\section{Data Analysis}
+First we analysed the frequency spectrum of the plots given. The signal we
+received. The frequency in Hertz was only from 0 to 25 Hz, as can be seen from
+the figure. \\
+\includegraphics[width=\textwidth]{freq} \\ \\ 
+The raw data given to us was told to be baseline filtered signal and the cleaned
+signal is the raw signal passed through a bandpass filter. As seen from the
+frequency spectrum there is no powerline interference as there is no frequency
+of 50Hz and multiple of 50Hz. To remove the powerline interference we can use
+a notch filter to remove 50Hz and it's multiple frequencies, that is, 50Hz and
+100Hz.\\ \\
+However, as per the plot, the signal was not baseline corrected. After
+subtracting the signal from it's amplitude mean, we get baseline corrected
+signal. This gives us a similar plot as passing the signal from a bandpass
+filter, allowing the frequency between 10Hz and 20Hz. \\ \\
+The plot here plots the original signal in red, the mean subtraction data is in
+blue and the bandpass filter data is in green. \\ 
+\includegraphics[width=\textwidth]{baseline} \\ \\ 
+For the R-peak detection, after filtering we double differentiated the data, the
+basic purpose of which was to amplify the noise. Here the noise in our case can
+be thought of as the R-peak. So if there is any peak, it will amplify those.
+When subtracting 2 points nearby; if they are close to each other, the points
+will suppress, and if they are apart from each-other they will get amplified.
+After that we took an optimal window size of 175 samples (found after
+exploratory analysis), and found the peaks in the data. \\ \\ 
+The original data can be seen and double differentiated data also can be seen
+from the plot to clearly see the peaks. \\
+\includegraphics[width=\textwidth]{doublediff}
+\end{document}
