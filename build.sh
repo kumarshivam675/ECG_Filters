@@ -1,1 +1,3 @@
-gcc RPeakAlgo.c -o RPeakAlgo
+make clean
+make
+strip RPeakAlgo

@@ -1,6 +1,5 @@
 #include "stdio.h"
-#include "math.h"
-
+//Takes input from a file and stores it in input_array
 int input(long double* input_array, char* input) {
 	FILE *fp;
 	fp=fopen(input,"r");
@@ -13,7 +12,7 @@ int input(long double* input_array, char* input) {
 	fclose(fp);
 	return i-1;
 }
-
+//Double differentiate the input_array
 void differentiate (long double* input_array, int size, int freq) {
 	int i=0;
 	for(i=0;i<size-1;i++) { //Differentiation
@@ -23,7 +22,7 @@ void differentiate (long double* input_array, int size, int freq) {
 		input_array[i]=(input_array[i+1]-input_array[i])*freq;
 	}
 }
-
+//Finds index of the maximum element in the input_array in the given range [prev, current)
 int findMaxIndex (long double* input_array, int prev, int current) {
 	int i,index;
 	long double max=-100;
@@ -37,7 +36,7 @@ int findMaxIndex (long double* input_array, int prev, int current) {
 		return -1;
 	return index;
 }
-
+//Detects peaks (sample number) according to window_size and finds the time of the samples based on frequency
 int peakDetect(long double* input_array, int* samples, float* time_samples, int size, int window_size, int freq) {
 	int current=window_size-1, prev =0, max_index, j=0;
 	while (current<size) {
@@ -47,13 +46,12 @@ int peakDetect(long double* input_array, int* samples, float* time_samples, int 
 			time_samples[j] = (float)samples[j]/(float)freq;
 			j++;
 		}
-
 		prev = current+1;
 		current = current + window_size;
 	}
 	return j;
 }
-
+//Calls the functions above and outputs in the commandline file
 int main(int argc,char* argv[]) {
 	FILE *fp;
 	if(argc != 3){
