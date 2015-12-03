@@ -12,6 +12,16 @@ int input(long double* input_array, char* input) {
 	fclose(fp);
 	return i-1;
 }
+//Puts samples and time output in the file
+void output(int* samples, float* time_samples, int sample_size, char* output) {
+	FILE *fp;
+	int j=0;
+	fp=fopen(output,"w");
+	for(j=0;j<sample_size;j++) {
+		fprintf(fp,"%d, %f\n",samples[j],time_samples[j]);
+	}
+	fclose(fp);
+}
 //Double differentiate the input_array
 void differentiate (long double* input_array, int size, int freq) {
 	int i=0;
@@ -53,7 +63,6 @@ int peakDetect(long double* input_array, int* samples, float* time_samples, int 
 }
 //Calls the functions above and outputs in the commandline file
 int main(int argc,char* argv[]) {
-	FILE *fp;
 	if(argc != 3){
 		printf("Please enter the input and output file respectively \n");
 		return 0;
@@ -65,10 +74,6 @@ int main(int argc,char* argv[]) {
 	size = input(input_array, argv[1]);
 	differentiate(input_array,size,freq);
 	sample_size = peakDetect(input_array,samples,time_samples,size,window_size,freq);
-	fp=fopen(argv[2],"w");
-	for(j=0;j<sample_size;j++) {
-		fprintf(fp,"%d, %f\n",samples[j],time_samples[j]);
-	}
-	fclose(fp);
+	output(samples,time_samples,sample_size,argv[2]);
 	return 0;
 }
