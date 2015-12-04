@@ -2,6 +2,7 @@
 
 
 long double input_array[100000];
+int size = 0;
 //Takes input from a file and stores it in input_array
 int input(long double* input_array, char* input) {
 	FILE *fp;
