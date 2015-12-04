@@ -1,5 +1,5 @@
 
-x = load('Akshit_DATA.txt')
+x = load('Akshit_DATA.txt');
 y = x-mean(x);
 
 figure

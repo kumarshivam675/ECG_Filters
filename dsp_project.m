@@ -18,5 +18,4 @@ for i = 1:length(k)-1
 end
 samples(samples == 0) = [];
 time = samples ./250;
-
     
