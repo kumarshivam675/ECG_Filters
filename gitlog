@@ -1,68 +1,98 @@
-* commit 993f4cb (HEAD, origin/master, origin/HEAD, master)
+* commit 6fa8e70 (HEAD, master)
 | Author: savs95 <apoorvvikram.singh@iiitb.org>
-| Date:   6 minutes ago
+| Date:   13 seconds ago
+| 
+|     nothing great
+|  
+* commit 0754c23 (origin/master, origin/HEAD)
+| Author: Shivam <kumarshivam675@gmail.com>
+| Date:   37 minutes ago
+| 
+|     RPeak matlab file dsp_project.m updated.
+|  
+* commit d34a4ec
+| Author: Ujjwal Jain <zpokmn18@gmail.com>
+| Date:   47 minutes ago
+| 
+|     Freq_Spectrum
+|  
+* commit e08de99
+| Author: Ujjwal Jain <zpokmn18@gmail.com>
+| Date:   48 minutes ago
+| 
+|     Create Baseline.m
+|  
+* commit 1b78f9a
+| Author: savs95 <apoorvvikram.singh@iiitb.org>
+| Date:   2 hours ago
+| 
+|     git log added for fun
+|  
+* commit 993f4cb
+| Author: savs95 <apoorvvikram.singh@iiitb.org>
+| Date:   2 hours ago
 | 
 |     Add the matlab codes rpeak, freq spectrum, mean baseline and fir baseline
 |  
 * commit 51861f1
 | Author: savs95 <apoorvvikram.singh@iiitb.org>
-| Date:   19 minutes ago
+| Date:   2 hours ago
 | 
 |     bhiatia's silly mistake
 |    
 *   commit ae31c9a
 |\  Merge: 21a0119 b9cfb8f
 | | Author: savs95 <apoorvvikram.singh@iiitb.org>
-| | Date:   44 minutes ago
+| | Date:   2 hours ago
 | | 
 | |     Merge branch 'master' of https://github.com/kumarshivam675/ECG_Filters
 | |   
 | * commit b9cfb8f
 | | Author: abhinavchawla <abhinav.chawla.95@gmail.com>
-| | Date:   2 hours ago
+| | Date:   3 hours ago
 | | 
 | |     CHanges in Max value
 | |   
 * | commit 21a0119
 |/  Author: savs95 <apoorvvikram.singh@iiitb.org>
-|   Date:   44 minutes ago
+|   Date:   2 hours ago
 |   
 |       Final Project Report
 |  
 * commit b2fe24a
 | Author: savs95 <apoorvvikram.singh@iiitb.org>
-| Date:   5 hours ago
+| Date:   6 hours ago
 | 
 |     fir filter silly mistake
 |  
 * commit 09d6ae7
 | Author: savs95 <apoorvvikram.singh@iiitb.org>
-| Date:   5 hours ago
+| Date:   6 hours ago
 | 
 |     baseline mean new and correct code written
 |  
 * commit 585b06f
 | Author: abhinavchawla <abhinav.chawla.95@gmail.com>
-| Date:   17 hours ago
+| Date:   19 hours ago
 | 
 |     Done
 |  
 * commit 71dc38a
 | Author: savs95 <apoorvvikram.singh@iiitb.org>
-| Date:   17 hours ago
+| Date:   19 hours ago
 | 
 |     Project Report
 |    
 *   commit 6e0f58a
 |\  Merge: c16b1d1 b579a78
 | | Author: savs95 <apoorvvikram.singh@iiitb.org>
-| | Date:   17 hours ago
+| | Date:   19 hours ago
 | | 
 | |     Merge branch 'master' of https://github.com/kumarshivam675/ECG_Filters
 | |   
 | * commit b579a78
 | | Author: Apoorv Vikram Singh <apoorvvikram.singh@iiitb.org>
-| | Date:   19 hours ago
+| | Date:   21 hours ago
 | | 
 | |     Removed un-necessary space.
 | |     
@@ -70,19 +100,19 @@
 | |   
 * | commit c16b1d1
 |/  Author: savs95 <apoorvvikram.singh@iiitb.org>
-|   Date:   19 hours ago
+|   Date:   21 hours ago
 |   
 |       Removed un-necessary sapces
 |  
 * commit a4ddb8c
 | Author: savs95 <apoorvvikram.singh@iiitb.org>
-| Date:   26 hours ago
+| Date:   28 hours ago
 | 
 |     more modularity added. Bhatia Seekhgit add -A
 |  
 * commit c6502f0
 | Author: savs95 <apoorvvikram.singh@iiitb.org>
-| Date:   26 hours ago
+| Date:   28 hours ago
 | 
 |     Comments added. Added Makefile with make clean.
 |  
