@@ -1,10 +1,10 @@
 \documentclass{article}
-\usepackage[utf8]{inputenc}
+\usepackage{float}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
 \title{DSP Project Report: ECG Signal Analysis}
-\author{Apoorv Vikram Singh (IMT2013006) \\ Ujjwal Jain (IMT2013056) \\ Abhinav Chawla (IMT2013002) \\ Siddartha Sekhar Padhi (IMT2013043) \\ Rishabh Bhadauria (IMT2013034) \\ Shivam Kumar (IMT2013042) }
+\author{Abhinav Chawla (IMT2013002) \\ Apoorv Vikram Singh (IMT2013006) \\ Rishabh Bhadauria (IMT2013034) \\ Shivam Kumar (IMT2013042) \\Siddartha Sekhar Padhi (IMT2013043) \\ Ujjwal Jain (IMT2013056) }
 \date{\today}
 
 \begin{document}
@@ -43,7 +43,7 @@ signal. This gives us a similar plot as passing the signal from a bandpass
 filter, allowing the frequency between 10Hz and 20Hz. \\ \\
 The plot here plots the original signal in red, the mean subtraction data is in
 blue and the bandpass filter data is in green. \\ 
-\includegraphics[width=\textwidth]{baseline} \\ \\ 
+\includegraphics[width=\textwidth]{baseline}  \\ \\
 For the R-peak detection, after filtering we double differentiated the data, the
 basic purpose of which was to amplify the noise. Here the noise in our case can
 be thought of as the R-peak. So if there is any peak, it will amplify those.
@@ -52,6 +52,36 @@ will suppress, and if they are apart from each-other they will get amplified.
 After that we took an optimal window size of 175 samples (found after
 exploratory analysis), and found the peaks in the data. \\ \\ 
 The original data can be seen and double differentiated data also can be seen
-from the plot to clearly see the peaks. \\
+from the plot to clearly see the peaks. We didn't use any threshold as it can be 
+misleading, due to varying thresholds. Instead, a maximum was found in every
+window, given the values are not zero.\\
 \includegraphics[width=\textwidth]{doublediff}
+\section{Code}
+The code for bandpass, bandstop, peak detection and a simple baseline removal 
+(by removing amplitudes mean from the amplitude) is written in C. The bandstop filter
+can act as a notch filter to remove the powerline interference. The bandpass can act as
+both high-pass and low-pass by adjusting the values in the code. \\ \\ 
+Assumption taken is that in the input file, we don't get more than $10^5$ sample points
+($\approx$ 6 minutes), and also in those 6 minutes, a normal functioning person using the
+Wipro AssureHealth would not have more than 1000 heart beats. 
+\subsection{Coding Environment}
+The code was written in C, and compiled using the gcc compiler (version 4.9.3), in the
+Ubuntu 14.04 Operating System. The plots were generated using Matlab 2013a. The report 
+is written in \LaTeX, and compiled using pdfTeX 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian).
+
+\begin{thebibliography}{9}
+\bibitem{stanford} 
+Xiao HU , Zhong XIAO and Ni ZHANG 
+\textit{Removal of baseline wander from ECG signal based on a statistical weighted moving average filter *}. 
+\\\texttt{www.zju.edu.cn/jzus/opentxt.php?doi=10.1631/jzus.C1010311}
+ 
+ \bibitem{einstein} 
+ Hossein Rabbani, M. Parsa Mahjoob, E. Farahabadi and A. Farahabadi
+ \textit{R Peak Detection in Electrocardiogram Signal Based on an Optimal Combination of Wavelet Transform, Hilbert Transform, and Adaptive Thresholding}
+ \\\texttt{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3342622/}
+
+ \bibitem{knuthwebsite} 
+ Finite Impulse Response (FIR) Filter \textit{Digital Filter Design}, reterieved from
+ \texttt{http://www.mikroe.com/chapters/view/72/chapter-2-fir-filters/}
+ \end{thebibliography}
 \end{document}
