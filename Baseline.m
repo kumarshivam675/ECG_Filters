@@ -17,7 +17,7 @@ notchWidth = 0.1;
 f1 = 0.08;
 f2 = 0.16;
 fil = fir1(21, [f1 f2], 'bandpass');
-y_filtered = filter(fil, 1, y)
+y_filtered = filter(fil, 1, y);
 plot(y_filtered, 'g');
 grid on;
 legend('original data', 'mean subtraction', 'bandpass');
