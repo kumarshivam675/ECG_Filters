@@ -1,5 +1,9 @@
 #include "stdio.h"
 //Takes input from a file and stores it in input_array
+
+long double input_array[100000];
+float time_samples[1000];
+int samples[1000];
 int input(long double* input_array, char* input) {
 	FILE *fp;
 	fp=fopen(input,"r");
@@ -67,10 +71,7 @@ int main(int argc,char* argv[]) {
 		printf("Please enter the input and output file respectively \n");
 		return 0;
 	}
-	long double input_array[22000];
 	int size, freq=250, sample_size, window_size = 175, i, j;
-	int samples[200];
-	float time_samples[200];
 	size = input(input_array, argv[1]);
 	differentiate(input_array,size,freq);
 	sample_size = peakDetect(input_array,samples,time_samples,size,window_size,freq);

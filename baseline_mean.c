@@ -1,4 +1,7 @@
 #include "stdio.h"
+
+
+long double input_array[100000];
 //Takes input from a file and stores it in input_array
 int input(long double* input_array, char* input) {
 	FILE *fp;
@@ -41,8 +44,6 @@ int main(int argc,char* argv[]) {
 		printf("Please enter the input and output file respectively \n");
 		return 0;
 	}
-	long double input_array[22000];
-	int size;
 	size = input(input_array, argv[1]);
 	meanBaseline(input_array,size);
 	output(input_array,size,argv[2]);
