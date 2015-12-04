@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
    	int j;
    	int taps=101;
 	long double fir_filter[taps];
-	long int len = i;
+	long int len = i-1;
 	long double sampling_freq = 250;
 	long double cutoff_freq1 = 49;
 	long double cutoff_freq2 = 51;

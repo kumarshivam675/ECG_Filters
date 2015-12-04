@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	FILE *fp,*fp2;
 	fp=fopen(argv[1],"r");
 	fp2=fopen(argv[2],"w");
-	long double input_array[20000],output_array[20000];
+	long double input_array[30000],output_array[30000];
 	int i=0;
 	do
    	{
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
    	int j;
    	int taps=101;
 	long double fir_filter[taps];
-	long int len = i;
+	long int len = i-1;
 	long double sampling_freq = 250;
 	long double cutoff_freq1 = 10;
 	long double cutoff_freq2 = 20;
