@@ -1,6 +1,7 @@
 #include "stdio.h"
 #include "math.h"
 #include "stdlib.h"
+long double input_array[100000],output_array[100000];
 
 void design_bandstop_filter(long double *fir_filter,int n, float f1, float f2)
 {
@@ -36,7 +37,6 @@ int main(int argc, char *argv[])
 	FILE *fp,*fp2;
 	fp=fopen(argv[1],"r");
 	fp2=fopen(argv[2],"w");
-	long double input_array[20000],output_array[20000];
 	int i=0;
 	do
    	{
