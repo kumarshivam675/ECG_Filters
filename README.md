@@ -12,4 +12,8 @@
 -$ ./build.sh
 -$ ./run.sh <inputECGFileName> <outputFileName>
 ```
-
+###Things needed
+- gcc compiler to compile and run the C files
+- Linux (we used Ubuntu) operating system
+- Octave 4.0 using the "signal" package
+- pdflatex to compile the tex file
